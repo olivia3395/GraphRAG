@@ -1,0 +1,3 @@
+The FastAPI application exposes three main endpoints. The health endpoint confirms the service is running. The ingest endpoint scans a local folder, loads text and image files, chunks text, builds embeddings, stores vector representations, and constructs the graph. The query endpoint performs dense retrieval, optional image retrieval, graph expansion, context assembly, and answer generation.
+
+Dense retrieval happens before graph expansion. This ordering is intentional: first-hop retrieval narrows the search space, and graph traversal then adds structurally related evidence. That makes the pipeline easier to explain and more faithful to a GraphRAG design.
